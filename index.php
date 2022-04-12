@@ -66,7 +66,7 @@
         padding-bottom: 100px;
       }
 
-      ul {
+      #facebook-pages-list {
         padding-left: 0;
         list-style-type: none;
         margin: 0.5rem 0 1rem 0;
@@ -76,7 +76,7 @@
         position: relative;
       }
 
-      li {
+      #facebook-pages-list li {
         background-color: #fff;
         line-height: 1.5rem;
         padding: 10px 20px;
@@ -189,12 +189,14 @@
             for (var i = 0, len = pages.length; i < len; i++) {
               var page = pages[i];
               var li = document.createElement('li');
+              var span = document.createElement('span');
               var a = document.createElement('a');
+              span.innerHTML = page.name;
               a.href = "#";
               a.class = 'mui-btn mui-btn--flat mui-btn--primary';
               a.onclick = subscribeApp.bind(this, page.id, page.access_token);
               a.innerHTML = 'Subscribe';
-              li.appendChild(page.name);
+              li.appendChild(span);
               li.appendChild(a);
               ul.appendChild(li);
             }
