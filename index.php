@@ -192,8 +192,8 @@
               var span = document.createElement('span');
               var a = document.createElement('a');
               span.innerHTML = page.name;
-              a.href = "#";
-              a.class = 'mui-btn mui-btn--flat mui-btn--primary';
+              a.href = '#';
+              a.className = 'mui-btn mui-btn--flat mui-btn--primary';
               a.onclick = subscribeApp.bind(this, page.id, page.access_token);
               a.innerHTML = 'Subscribe';
               li.appendChild(span);
