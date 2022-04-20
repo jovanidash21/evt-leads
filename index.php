@@ -106,13 +106,7 @@
         <table>
           <tr class="mui--appbar-height">
             <td class="mui--text-title">EVT Leads</td>
-            <td class="mui--text-right">
-              <ul class="mui-list--inline mui--text-body2">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Login</a></li>
-              </ul>
-            </td>
+            <td class="mui--text-right"></td>
           </tr>
         </table>
       </div>
@@ -201,7 +195,7 @@
               ul.appendChild(li);
             }
           });
-        }, {scope: ['pages_show_list', 'leads_retrieval']});
+        }, {scope: ['pages_show_list', 'leads_retrieval', 'pages_manage_ads', 'pages_manage_metadata', 'pages_read_engagement']});
       }
     </script>
   </body>
