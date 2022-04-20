@@ -195,7 +195,7 @@
               ul.appendChild(li);
             }
           });
-        }, {scope: ['pages_show_list', 'leads_retrieval', 'pages_manage_ads', 'pages_manage_metadata', 'pages_read_engagement']});
+        }, {scope: ['pages_show_list', 'pages_manage_metadata', 'pages_read_engagement', 'leads_retrieval', 'ads_management']});
       }
     </script>
   </body>
