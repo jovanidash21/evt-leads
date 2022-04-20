@@ -35,6 +35,31 @@ if (
 
           if ( ! empty( $facebook_data ) ) {
             $facebook_data = json_decode( $facebook_data, true, 512, JSON_BIGINT_AS_STRING );
+            $field_data    = $facebook_data['field_data'];
+
+            if ( ! empty( $field_data ) ) {
+              $headers = [
+                'Email',
+                'Name',
+              ];
+              $data = [];
+
+              foreach ( $field_data as $field ) {
+                $data[0][ $field['name'] ] = $field['values'][0];
+              }
+
+              $output = fopen( 'leads.csv', 'w' );
+
+              fputcsv( $output, $headers );
+
+              if ( ! empty( $data ) ) {
+                foreach ( $data as $row ) {
+                  fputcsv( $output, $row );
+                }
+              }
+
+              fclose ( $output );
+            }
 
             error_log( print_r( $facebook_data, true ) );
           }
