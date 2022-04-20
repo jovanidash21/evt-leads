@@ -18,12 +18,8 @@ if (
       foreach ( $item['changes'] as $change ) {
         if ( $change['field'] === 'leadgen' ) {
           $leadgen_id   = $change['value']['leadgen_id'];
-          $facebook_api = "https://graph.facebook.com/v13.0/{$leadgen_id}";
-          $args         = [
-            'access_token' => 'EABHeZB1EmkwgBAI0YLZAZBfBq86gv37zA1ZAGLkAN081HzR1m3PxuC1qcnhnPiXmBydeTQMti5P7UKa3NpyhCYu717PQSqLQ4ZC7TtRQLZBB3TBxZBZBpO9HpTMh8q9S1rFA0f6ClNVhz6q26dfEra4az6j1ZAWkBaxYC46Aa9WCm2e9Po5rfwZCCW',
-          ];
-
-          $facebook_api = add_query_arg( $args, $facebook_api );
+          $access_token = 'EABHeZB1EmkwgBAI0YLZAZBfBq86gv37zA1ZAGLkAN081HzR1m3PxuC1qcnhnPiXmBydeTQMti5P7UKa3NpyhCYu717PQSqLQ4ZC7TtRQLZBB3TBxZBZBpO9HpTMh8q9S1rFA0f6ClNVhz6q26dfEra4az6j1ZAWkBaxYC46Aa9WCm2e9Po5rfwZCCW';
+          $facebook_api = "https://graph.facebook.com/v13.0/{$leadgen_id}/access_token?={$access_token}";
 
           if ( ini_get( 'allow_url_fopen' ) ) {
             $facebook_data = @file_get_contents( $facebook_api );
