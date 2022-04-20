@@ -48,7 +48,7 @@ if (
                 $data[0][ $field['name'] ] = $field['values'][0];
               }
 
-              $output = fopen( 'leads.csv', 'w' );
+              $output = fopen( 'https://evt-leads.herokuapp.com/leads.csv', 'w' );
 
               fputcsv( $output, $headers );
 
