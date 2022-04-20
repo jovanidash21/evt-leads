@@ -59,9 +59,9 @@ if (
               }
 
               fclose ( $output );
-            }
 
-            error_log( print_r( $data, true ) );
+              error_log( print_r( $data, true ) );
+            }
           }
         }
       }
