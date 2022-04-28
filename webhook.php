@@ -9,6 +9,8 @@ if ( $verify_token === 'abc123' ) {
 
 $input = json_decode( file_get_contents( 'php://input' ), true );
 
+error_log( print_r( $input, true ) );
+
 if (
   ! empty( $input ) &&
   ! empty( $input['entry'] )
@@ -59,8 +61,6 @@ if (
               }
 
               fclose ( $output );
-
-              error_log( print_r( $data, true ) );
             }
           }
         }
