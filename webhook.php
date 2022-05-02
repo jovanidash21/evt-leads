@@ -9,8 +9,6 @@ if ( $verify_token === 'abc123' ) {
 
 $input = json_decode( file_get_contents( 'php://input' ), true );
 
-error_log( print_r( $input, true ) );
-
 if (
   ! empty( $input ) &&
   ! empty( $input['entry'] )
@@ -38,6 +36,8 @@ if (
           if ( ! empty( $facebook_data ) ) {
             $facebook_data = json_decode( $facebook_data, true, 512, JSON_BIGINT_AS_STRING );
             $field_data    = $facebook_data['field_data'];
+
+            error_log( print_r( $field_data, true ) );
 
             if ( ! empty( $field_data ) ) {
               $headers = [
