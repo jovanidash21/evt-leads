@@ -157,13 +157,14 @@
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
 
-      function subscribeApp(page_id, page_access_token) {
+      function subscribeApp(tag, page_id, page_access_token) {
         console.log('Subscribing page to app! ' + page_id);
         FB.api(
           '/' + page_id + '/subscribed_apps',
           'post',
           {access_token: page_access_token, subscribed_fields: ['leadgen']},
           function(response) {
+            tag.innerHTML = '✓ Subscribed';
             console.log('Successfully subscribed page', response);
           }
         );
@@ -188,7 +189,7 @@
               span.innerHTML = page.name;
               a.href = '#';
               a.className = 'mui-btn mui-btn--flat mui-btn--primary';
-              a.onclick = subscribeApp.bind(this, page.id, page.access_token);
+              a.onclick = subscribeApp.bind(this, tag, page.id, page.access_token);
               a.innerHTML = 'Subscribe';
               li.appendChild(span);
               li.appendChild(a);
