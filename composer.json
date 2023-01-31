@@ -1,0 +1,13 @@
+{
+    "name": "jovanidash21/evt-leads",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Jovani Warguez",
+            "email": "jovani@rocksoliddigital.com"
+        }
+    ],
+    "repositories": [],
+    "require": {
+    }
+}
